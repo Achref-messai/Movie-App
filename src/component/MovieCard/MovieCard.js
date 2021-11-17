@@ -1,9 +1,9 @@
 import React from "react";
 import "./MovieCard.css";
-import Rating from "../Rating";
 import StarRatingComponent from "react-star-rating-component";
+import { Link } from "react-router-dom";
 
-const MovieCard = ({ el }) => {
+const MovieCard = ({ el, id }) => {
   return (
     <div>
       <div className="movie_card">
@@ -28,6 +28,10 @@ const MovieCard = ({ el }) => {
             />
           </div>
         </div>
+        <Link to={`/description/${id}`}>
+          {" "}
+          <img src={el.image} alt="" className="center" />
+        </Link>
       </div>
     </div>
   );
